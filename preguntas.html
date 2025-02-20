@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ugly Answers - HTML &amp; CSS</title>
+  <style>
+    body {
+      background-color: #ff00ff; 
+      color: #000000; 
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      font-size: 18px;
+      margin: 20px;
+      padding: 20px;
+      border: 5px dashed #00ff00;
+    }
+    h1, h2 {
+      color: #ff0000;
+      text-decoration: underline;
+    }
+    p {
+      margin: 10px 0;
+    }
+    ul, ol {
+      background: #ffff00;
+      padding: 10px;
+      border: 3px dotted #0000ff; 
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 10px 0;
+    }
+    table, th, td {
+      border: 2px solid #00ffff;
+    }
+    pre {
+      background: #cccccc;
+      padding: 5px;
+      border: 1px solid #333333;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML</h1>
+  <h2>Introduction</h2>
+  <p><strong>What is HTML?</strong></p>
+  <p>HTML stands for HyperText Markup Language. It creates web pages.</p>
+  
+  <p><strong>Explain the head and the body tags.</strong></p>
+  <p>The <code>&lt;head&gt;</code> holds meta info, titles, links, and scripts. The <code>&lt;body&gt;</code> holds the visible content.</p>
+  
+  <h2>Basic Tags</h2>
+  <p><strong>Explain the section, article, aside, header, footer tags.</strong></p>
+  <p>
+    <em>section:</em> A block of related content.<br>
+    <em>article:</em> Self-contained content like a post.<br>
+    <em>aside:</em> Extra info or sidebar content.<br>
+    <em>header:</em> The top part, often with a title or menu.<br>
+    <em>footer:</em> The bottom part, for extra info.
+  </p>
+  
+  <p><strong>Unordered List:</strong></p>
+  <ul>
+    <li>Item One</li>
+    <li>Item Two</li>
+    <li>Item Three</li>
+  </ul>
+  
+  <p><strong>Ordered List:</strong></p>
+  <ol>
+    <li>First Item</li>
+    <li>Second Item</li>
+    <li>Third Item</li>
+  </ol>
+  
+  <p><strong>Basic Table:</strong></p>
+  <table>
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+    </tr>
+    <tr>
+      <td>Cell 1</td>
+      <td>Cell 2</td>
+    </tr>
+    <tr>
+      <td>Cell 3</td>
+      <td>Cell 4</td>
+    </tr>
+  </table>
+  
+  <h1>CSS</h1>
+  <h2>Introduction</h2>
+  <p><strong>What is CSS?</strong></p>
+  <p>CSS stands for Cascading Style Sheets. It styles HTML content.</p>
+  
+  <p><strong>What is the purpose of CSS?</strong></p>
+  <p>It makes web pages look good by controlling design and layout.</p>
+  
+  <p><strong>How do you apply CSS to HTML? (3 options)</strong></p>
+  <p>You can use inline styles, an internal <code>&lt;style&gt;</code> block, or an external CSS file.</p>
+  
+  <p><strong>What is a selector? What is a CSS rule?</strong></p>
+  <p>A selector picks an HTML element to style. A CSS rule is the selector plus properties and values.</p>
+  
+  <h2>Basic CSS</h2>
+  <p><strong>Tag Selector:</strong> Styles all elements of a tag (e.g. <code>p { ... }</code>).</p>
+  <p><strong>Class Selector:</strong> Styles elements with a specific class (e.g. <code>.example { ... }</code>).</p>
+  <p><strong>Tag and Class Selector:</strong> Styles a tag with a specific class (e.g. <code>p.example { ... }</code>).</p>
+  <p><strong>Id Selector:</strong> Styles an element with a unique id (e.g. <code>#unique { ... }</code>).</p>
+  
+  <p><strong>What is a class? What is an id? How are they related to CSS?</strong></p>
+  <p>A class is a style you can reuse on many elements. An id is unique to one element. They help target elements with CSS.</p>
+  
+  <p><strong>Explain the CSS Box Model. Example:</strong></p>
+  <p>The box model includes content, padding, border, and margin. For example:</p>
+  <pre>
+div {
+  padding: 10px;
+  border: 1px solid black;
+  margin: 5px;
+}
+  </pre>
+  
+  <p><strong>How can you change the font color using CSS?</strong></p>
+  <p>You can use the <code>color</code> property. For example: <code>p { color: red; }</code></p>
+</body>
+</html>
