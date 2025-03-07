@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donantes</title>
+</head>
+<body>
+    <h1>Lista de Donantes</h1>
+    <nav>
+        <a href="/">Bienvenida</a>
+        <a href="/escuelas">Escuelas</a>
+    </nav>
+    <div id="lista-donantes">
+    </div>
+    <script>
+        async function obtenerDonantes() {
+            const respuesta = await fetch("/api/donantes");
+            const donantes = await respuesta.json();
+            console.log(donantes);
+            const contenedor = document.getElementById("lista-donantes");
+            if (Array.isArray(donantes)) {
+                donantes.forEach(donante => {
+                    const p = document.createElement("p");
+                    p.innerText = `Nombre: ${donante.nombre}, Contribución: ${donante.contribucion}`;
+                    contenedor.appendChild(p);
+                });
+            } else {
+                contenedor.innerText = "No se encontraron donantes.";
+            }
+        }
+        obtenerDonantes();
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Escuelas</title>
+</head>
+<body>
+    <h1>Lista de escuelas</h1>
+    <nav>
+        <a href="/">Bienvenida</a>
+        <a href="/donantes">Donantes</a>
+    </nav>
+    <div id="lista-escuelas"></div>
+
+    <script>
+        async function obtenerEscuelas() {
+          const respuesta = await fetch("/api/escuelas");
+          const escuelas = await respuesta.json();
+          console.log(escuelas);
+          const contenedor = document.getElementById("lista-escuelas");
+          if (Array.isArray(escuelas)) {
+            escuelas.forEach(escuela => {
+              const parrafo = document.createElement("p");
+              parrafo.innerText = `Nombre: ${escuela.nombre}, Dirección: ${escuela.direccion}`;
+              contenedor.appendChild(parrafo);
+            });
+          } else {
+            contenedor.innerText = "No se encontraron escuelas.";
+          }
+        }
+        obtenerEscuelas();
+    </script>
+</body>
+</html>
