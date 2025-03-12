@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chistes de Chuck Norris</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Chistes de Chuck Norris</h1>
+    <div class="text-center mb-4">
+      <button id="btnChiste" class="btn btn-primary mr-2">Mostrar Chiste</button>
+      <button id="btnExplicacion" class="btn btn-secondary">Mostrar Explicación</button>
+    </div>
+    <div id="resultado" class="mb-4"></div>
+    <div id="explicacion" class="alert alert-info" style="display: none;"></div>
+  </div>
+
+  <script>
+    const apiURL = "https://api.chucknorris.io/jokes/random";
+
+    document.getElementById('btnChiste').addEventListener('click', function() {
+      fetch(apiURL)
+        .then(response => response.json())
+        .then(data => {
+          const html = `
+            <div class="card">
+              <div class="card-body">
+                <p class="card-text">${data.value}</p>
+              </div>
+            </div>
+          `;
+          document.getElementById('resultado').innerHTML = html;
+        })
+        .catch(error => {
+          console.error("Error al obtener el chiste:", error);
+          document.getElementById('resultado').innerHTML = "<p>Error al obtener el chiste.</p>";
+        });
+    });
+
+    document.getElementById('btnExplicacion').addEventListener('click', function() {
+      const texto = `
+        Explicación: <br>
+        Este ejemplo usa el método fetch() de JavaScript para hacer una solicitud HTTP GET a la API de Chuck Norris (<code>${apiURL}</code>), que regresa un chiste aleatorio. <br>
+        La respuesta se convierte a JSON y se accede a la propiedad value para enseñar el chiste en la página sin tener que recargarla.
+      `;
+      const explicacionDiv = document.getElementById('explicacion');
+      explicacionDiv.innerHTML = texto;
+      explicacionDiv.style.display = (explicacionDiv.style.display === "none") ? "block" : "none";
+    });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
